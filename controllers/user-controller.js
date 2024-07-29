@@ -78,18 +78,18 @@ exports.updateUserById = async (req, res)=> {
 }
 
 exports.createNewUser = async (req, res)=>{
-    const { name, surname, email, subscriptionType, subscriptionDate} = req.body;
+    const { name, surname, email, issuedBook, subscriptionType, subscriptionDate} = req.body;
 
     const newUser = await UserModel.create({
-        name, surname, email, subscriptionType, subscriptionDate
+        name, surname, email, issuedBook, subscriptionType, subscriptionDate
     })
 
-    if(user){
-        return res.status(404).json({
-            success: false,
-            message: "User with the given id exists :-("
-        })
-    }
+    // if(user){
+    //     return res.status(404).json({
+    //         success: false,
+    //         message: "User with the given id exists :-("
+    //     })
+    // }
     // users.push({
     //     id, name, surname, email, subscriptionType, subscriptionDate
     // })
